@@ -91,7 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo '</div>';
 }
 ?>
-
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
         <h2 class="card-title text-center mb-4">Cadastro</h2>
