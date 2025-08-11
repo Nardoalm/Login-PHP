@@ -1,0 +1,222 @@
+/* ===============================
+   Variáveis de Cores (Tema Principal)
+   =============================== */
+:root {
+    --primary-color: #007bff; /* Azul padrão do Bootstrap */
+    --primary-dark-color: #0056b3; /* Azul mais escuro para hover/active */
+    
+    --bg-light: #f8f9fa; /* Fundo claro geral, similar ao Bootstrap bg-light */
+    --text-dark: #212529; /* Cor de texto principal, similar ao Bootstrap text-dark */
+    --text-muted: #6c757d; /* Cor de texto secundário, similar ao Bootstrap text-muted */
+
+    --error-bg: #f8d7da; /* Fundo para mensagens de erro */
+    --error-border: #f5c2c7; /* Borda para mensagens de erro */
+    --error-text: #842029; /* Texto para mensagens de erro */
+
+    --success-bg: #d1e7dd; /* Fundo para mensagens de sucesso */
+    --success-border: #badbcc; /* Borda para mensagens de sucesso */
+    --success-text: #0f5132; /* Texto para mensagens de sucesso */
+}
+
+/* ===============================
+   Reset Básico e Tipografia Global
+   =============================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* Define o tamanho base para 1rem */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================
+   Main Content Area (Login, Cadastro, etc.)
+   =============================== */
+main {
+    background: #fff;
+    max-width: 420px;
+    width: 90%;
+    margin: 2rem auto; /* Centraliza e adiciona margem vertical */
+    padding: 2rem 1.5rem;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08); /* Sombra mais suave e consistente */
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+}
+
+/* ===============================
+   Formulários e Inputs
+   =============================== */
+/* Já que você está usando Bootstrap, .form-control já faz a maior parte disso */
+/* Mantenho para sobrescrever ou complementar */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    /* As classes form-control do Bootstrap já cuidam de width: 100%, padding, border, border-radius */
+    /* Remova estas se quiser usar 100% o estilo do Bootstrap para inputs */
+    /* width: 100%; */
+    /* padding: 0.75rem 1rem; */
+    /* border: 1.8px solid #ced4da; */
+    /* border-radius: 6px; */
+    font-size: 1rem;
+    /* Ajuste de margem se o Bootstrap mb-3 não for suficiente */
+    margin-bottom: 1.25rem; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para labels se não usar form-label do Bootstrap */
+label {
+    display: block; /* Garante que a label fique em sua própria linha */
+    margin-bottom: 0.25rem; /* Espaçamento entre label e input */
+    font-weight: 500; /* Um pouco mais de peso na fonte */
+    color: var(--text-dark);
+}
+
+
+/* Focus nos inputs */
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0.375rem rgba(0, 123, 255, 0.4); /* 6px */
+    outline: none;
+}
+
+/* ===============================
+   Botões
+   =============================== */
+/* As classes .btn e .btn-primary do Bootstrap já estilizam botões. */
+/* Mantenho para sobrescrever ou complementar */
+button[type="submit"] { /* Específico para botões de submit se houver outros botões */
+    /* As classes .btn e .btn-primary já cuidam de background-color, border, padding, color, border-radius */
+    /* Remova estas se quiser usar 100% o estilo do Bootstrap para botões */
+    /* width: 100%; */
+    /* background-color: var(--primary-color); */
+    /* border: none; */
+    /* padding: 0.75rem 0; */
+    /* color: white; */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--primary-dark-color);
+    box-shadow: 0 0 0.625rem rgba(0, 86, 179, 0.5); /* 10px */
+    outline: none;
+}
+
+/* ===============================
+   Mensagens de Feedback (Erros/Sucesso)
+   =============================== */
+/* Já que você está usando as classes alert do Bootstrap, pode remover estas */
+/* ou usá-las para dar um toque mais personalizado */
+p.msg-erro,
+p.msg-sucesso {
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem; /* 6px */
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+p.msg-erro {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--error-text);
+}
+
+p.msg-sucesso {
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--success-text);
+}
+
+/* ===============================
+   Links de Cadastro/Login (Rodapé do formulário)
+   =============================== */
+.classDoNaoTemConta { /* Removi .classDoPdeJaTemConta para evitar duplicação se o estilo for o mesmo */
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-muted); /* Usando variável de cor do tema */
+    margin-top: 1.5rem; /* Aumentei um pouco a margem */
+}
+
+.classDoNaoTemConta a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.classDoNaoTemConta a:hover,
+.classDoNaoTemConta a:focus {
+    color: var(--primary-dark-color);
+    text-decoration: underline;
+    outline: none;
+}
+
+/* ===============================
+   Estilos de Painel
+   =============================== */
+.painel-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--bg-light); /* Usando variável */
+}
+
+.painel-bemvindo {
+    background-color: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.painel-bemvindo h2 {
+    font-size: 1.75rem;
+    color: var(--text-dark); /* Usando variável */
+    margin-bottom: 1rem;
+}
+
+.painel-bemvindo p {
+    font-size: 1rem;
+    color: var(--text-muted); /* Usando variável */
+    margin-bottom: 1.5rem;
+}
+
+.btn-sair {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    background-color: #dc3545; /* Bootstrap --bs-danger */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0.375rem; /* 6px */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-sair:hover,
+.btn-sair:focus {
+    background-color: #c82333; /* Bootstrap --bs-danger-rgb escurecido */
+    box-shadow: 0 0 0.625rem rgba(220, 53, 69, 0.4);
+    outline: none;
+}
